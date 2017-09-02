@@ -23,7 +23,6 @@ public class ScreenThread extends Thread
 			adb.ScreenRGBMatrix.ScreenShot();
 			System.out.println("click");
 			// Sleep for a while
-			setCurrentScreen();
 			try
 			{
 				ScreenThread.sleep(200);
@@ -54,7 +53,7 @@ public class ScreenThread extends Thread
 		Commands.Command(new String[]{"adb", "shell", "rm", "/sdcard/screen.png"});
 		System.out.println("click");
 		}while(!new File("screen.png").exists());
-		
+		setCurrentScreen();
 	}
 	public static Image getCurrentScreen(){
 			return img;

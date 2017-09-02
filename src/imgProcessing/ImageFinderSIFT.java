@@ -24,7 +24,7 @@ import org.opencv.highgui.Highgui;
 
 public class ImageFinderSIFT
 {
-	protected static float nndrRatio = 0.5f;
+	protected static float nndrRatio = 0.4f;
 	public static Mat scene_corners;
 
 	public static boolean ScanForImageExist(String scanObjectLocation)
