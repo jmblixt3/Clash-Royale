@@ -44,11 +44,11 @@ public class ImageFinderSIFT
 		{
 			if (bitness.endsWith("64"))
 			{
-				lib = new File("libs//opencv//build//java//x64//" + System.mapLibraryName("opencv_java2411"));
+				lib = new File("libs//opencv//x64//" + System.mapLibraryName("opencv_java2411"));
 			}
 			else
 			{
-				lib = new File("libs//opencv//build//java//x86//" + System.mapLibraryName("opencv_java2411"));
+				lib = new File("libs//opencv//x86//" + System.mapLibraryName("opencv_java2411"));
 			}
 		}
 		System.load(lib.getAbsolutePath());
