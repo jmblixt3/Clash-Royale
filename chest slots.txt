@@ -1,0 +1,4 @@
+slot 1 null
+ slot 2 gold
+ slot 3 silver
+,slot 4 silver

@@ -125,7 +125,7 @@ public class ScanFor
 		matches[5] = tests.SIFTTest.test("images\\Images\\ui\\chests\\legendary-chest.png", location);
 		matches[6] = tests.SIFTTest.test("images\\Images\\ui\\chests\\magical-chest.png", location);
 		matches[7] = tests.SIFTTest.test("images\\Images\\ui\\chests\\super-magical-chest.png", location);
-		int max = matches[0];
+		int max = 4;
 		int maxc = 0;
 		for (int counter = 1; counter < matches.length; counter++)
 		{
@@ -151,7 +151,7 @@ public class ScanFor
 		case 6:
 			return "magical";
 		case 7:
-			return "suoer-magical";
+			return "super-magical";
 		default:
 			return null;
 		}

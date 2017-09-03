@@ -34,18 +34,8 @@ public class Commands
 		{ "adb", "shell", "input", "tap", String.valueOf(x), String.valueOf(y) });
 	}
 
-	public static void TouchSelectedObject()
-	{
-		Touch(imgProcessing.CenterObject.Avgx(), imgProcessing.CenterObject.Avgy());
-		System.out.println(imgProcessing.CenterObject.Avgx() + " " + imgProcessing.CenterObject.Avgy());
-	}
+	
 
-	public static void OpenChest()
-	{
-		ScreenRGBMatrix.ScreenShot();
-		imgProcessing.ImageFinderSIFT.ScanForImageExist("images\\Images\\ui\\icons\\icons_chests_startUnlock.png");
-		Commands.TouchSelectedObject();
-	}
 
 	public static void Swipe(String x1, String y1, String x2, String y2)
 	{
@@ -75,13 +65,6 @@ public class Commands
 		{ "adb", "shell", "am", "start", "-c", "android.intent.category.HOME", "-a", "android.intent.action.MAIN" });
 	}
 
-	public static void OpenCR()
-	{
-		ScreenRGBMatrix.ScreenShot();
-		imgProcessing.ImageFinderSIFT.ScanForImageExist("images\\Images\\icon\\Rounded_1024x1024.png");
-		Commands.TouchSelectedObject();
-		waitForDevice();
-	}
 
 	public static void waitForDevice()
 	{
