@@ -2,65 +2,63 @@ package application;
 
 import static javafx.geometry.HPos.*;
 
+import java.io.IOException;
+
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.*;
+import javafx.collections.FXCollections;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
+import javafx.scene.control.ChoiceBox;
 
 public class Main extends Application
 {
-	@Override
-	public void start(Stage primaryStage)
-	{  primaryStage.setTitle("Java FX");
-    GridPane grid = new GridPane();
-    grid.setAlignment(Pos.TOP_CENTER);
-    grid.getStyleClass().add("application.css");
-    //grid.setGridLinesVisible(true);
+	@FXML
+	ChoiceBox<String> choiceBox;
 
-    Label chests = new Label("Chests");
-    grid.add(chests, 1, 1);
+	public void start(Stage stage) throws IOException
+	{ /*
+		 * primaryStage.setTitle("Java FX"); GridPane grid = new GridPane();
+		 * grid.setAlignment(Pos.TOP_CENTER);
+		 * grid.getStyleClass().add("application.css");
+		 * //grid.setGridLinesVisible(true);
+		 * Label battle = new Label("Battle"); grid.add(battle, 2, 1);
+		 * 
+		 * Label clan = new Label("Clan"); grid.add(clan, 3, 1);
+		 * 
+		 * Label decks = new Label("Decks"); grid.add(decks, 4, 1);
+		 * 
+		 * Label tournaments = new Label("Tournaments"); grid.add(tournaments,
+		 * 5, 1);
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 * btn.setOnAction(new EventHandler<ActionEvent>() {
+		 * 
+		 * @Override public void handle(ActionEvent e) {
+		 * actiontarget.setFill(Color.FIREBRICK);
+		 * actiontarget.setText("Sign in button pressed"); } }); Scene scene =
+		 * new Scene(grid, 600, 150); primaryStage.setScene(scene);
+		 * scene.getStylesheets().add
+		 * (Main.class.getResource("application.css").toExternalForm());
+		 * primaryStage.show();
+		 */
+		Parent root = FXMLLoader.load(getClass().getResource("HOME.fxml"));
+		//initalize();
+		Scene scene = new Scene(root, 300, 275);
+		stage.setTitle("FXML Welcome");
+		stage.setScene(scene);
+		stage.show();
+	}
 
-    Label battle = new Label("Battle");
-    grid.add(battle, 2, 1);
-
-    Label clan = new Label("Clan");
-    grid.add(clan, 3, 1);
-    
-    Label decks = new Label("Decks");
-    grid.add(decks, 4, 1);
-    
-    Label tournaments = new Label("Tournaments");
-    grid.add(tournaments, 5, 1);
-    
- 
-    
-    
-
-    /*btn.setOnAction(new EventHandler<ActionEvent>() {
-
-        @Override
-        public void handle(ActionEvent e) {
-            actiontarget.setFill(Color.FIREBRICK);
-            actiontarget.setText("Sign in button pressed");
-        }
-    });*/
-    Scene scene = new Scene(grid, 600, 150);
-    primaryStage.setScene(scene);
-    scene.getStylesheets().add
-     (Main.class.getResource("application.css").toExternalForm());
-    primaryStage.show();
+	@FXML
+	private void initalize()
+	{
+		choiceBox.setItems(FXCollections.observableArrayList("apples", "oranges"));
 	}
 
 	public static void main(String[] args)
