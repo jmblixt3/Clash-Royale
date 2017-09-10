@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -49,6 +50,13 @@ public class Main extends Application
 		 */
 		Parent root = FXMLLoader.load(getClass().getResource("HOME.fxml"));
 		//initalize();
+
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HOME.fxml"));
+		fxmlLoader.load();
+		ObservableList<String> cursors = FXCollections.observableArrayList("a","b","c");
+		choiceBox = new ChoiceBox<String>();
+	    choiceBox.setItems(cursors);
+	    fxmlLoader.get
 		Scene scene = new Scene(root, 300, 275);
 		stage.setTitle("FXML Welcome");
 		stage.setScene(scene);
