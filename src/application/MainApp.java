@@ -34,8 +34,8 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
         primaryStage.setTitle("I like Pie");
-        new Observable
-        choiceBox.setItems(new );
+        /*Observable
+        choiceBox.setItems*/
     }
 
    
