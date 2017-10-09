@@ -7,11 +7,9 @@ public class Commands
 
 {
 	static String ip = "192.168.1.13";
-
+	public static Process builder = null;
 	public static void Command(String[] command)
 	{
-		Process builder =
-		null;
 		try
 		{
 			builder = new ProcessBuilder(command).start();
@@ -23,7 +21,6 @@ public class Commands
 		}
 		builder.destroy();
 		
-		
 	}
 
 	
@@ -34,13 +31,10 @@ public class Commands
 		{ "adb", "shell", "input", "tap", String.valueOf(x), String.valueOf(y) });
 	}
 
-	
-
-
 	public static void Swipe(String x1, String y1, String x2, String y2)
 	{
 		Commands.Command(new String[]
-		{ "adb", "shell", "input", "swipe", x1, y1, x2, y2 });
+		{ "adb", "shell", "input", "swipe", x1, y1, x2, y2,"100" });
 	}
 
 	public static void SwipeRight()
@@ -65,7 +59,9 @@ public class Commands
 		{ "adb", "shell", "am", "start", "-c", "android.intent.category.HOME", "-a", "android.intent.action.MAIN" });
 	}
 
-
+	public static void Kill(){
+		Commands.Command(new String[] { "taskkill", "/F", "/IM", "adb.exe" });
+	}
 	public static void waitForDevice()
 	{
 		Command(new String[]

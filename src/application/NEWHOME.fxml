@@ -41,14 +41,19 @@
            <content>
              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
-                     <Button fx:id="StartButton" layoutX="14.0" layoutY="86.0" mnemonicParsing="false" onAction="#StartHack" prefHeight="36.0" prefWidth="119.0" text="Start">
+                     <Button fx:id="StartButton" layoutX="14.0" layoutY="86.0" mnemonicParsing="false" onAction="#ResumeHack" prefHeight="36.0" prefWidth="119.0" text="Start">
                         <font>
                            <Font name="Comic Sans MS" size="20.0" />
                         </font>
                      </Button>
-                     <Button fx:id="StopAction" layoutX="148.0" layoutY="86.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="106.0" text="Stop" textFill="#eb0505" onAction="#StopHack">
+                     <Button fx:id="StopAction" layoutX="148.0" layoutY="86.0" mnemonicParsing="false" onAction="#StopHack" prefHeight="42.0" prefWidth="106.0" text="Stop" textFill="#eb0505">
                         <font>
                            <Font size="20.0" />
+                        </font>
+                     </Button>
+                     <Button fx:id="KillAction" layoutX="268.0" layoutY="87.0" mnemonicParsing="false" onAction="#Kill" prefHeight="36.0" prefWidth="119.0" text="Kill">
+                        <font>
+                           <Font name="Comic Sans MS" size="20.0" />
                         </font>
                      </Button>
                   </children>

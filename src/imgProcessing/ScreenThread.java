@@ -1,9 +1,8 @@
 package imgProcessing;
 
-import java.awt.Color;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -12,56 +11,78 @@ import adb.Commands;
 
 public class ScreenThread extends Thread
 {
-	private static boolean isactive =true;
+	private static boolean isactive = true;
 	private static Image img = null;
+
 	public void run()
 	{
-
-		// Loop for ten iterations.
-		while(isIsactive())
+		System.out.print(isactive);
+		while (Isactive())
 		{
-			adb.ScreenRGBMatrix.ScreenShot();
-			System.out.println("click");
+			ScreenShot();
 			// Sleep for a while
-			try
-			{
-				ScreenThread.sleep(200);
-			} catch (InterruptedException e)
-			{
-				// Interrupted exception will occur if
-				// the Worker object's interrupt() method
-				// is called. interrupt() is inherited
-				// from the Thread class.
-				break;
-			}
 		}
+		try
+		{
+			ScreenThread.sleep(100);
+		} catch (InterruptedException e)
+		{
+			// Interrupted exception will occur if
+			// the Worker object's interrupt() method
+			// is called. interrupt() is inherited
+			// from the Thread class.
+		}
+		System.out.println("no click");
 	}
-	public static boolean isIsactive()
+
+	private static boolean Isactive()
 	{
 		return isactive;
 	}
-	public static void setIsactive(boolean isactive)
+
+	private void setIsactive(boolean isactive)
 	{
 		ScreenThread.isactive = isactive;
 	}
-	public static void ScreenShot()
+
+	public void Start()
 	{
-		
-		do{
-		Commands.Command(new String[]{"adb", "shell", "screencap", "-p", "/sdcard/screen.png"});
-		Commands.Command(new String[]{"adb", "pull", "/sdcard/screen.png"});
-		Commands.Command(new String[]{"adb", "shell", "rm", "/sdcard/screen.png"});
+		setIsactive(true);
+	}
+
+	public void Stop()
+	{
+		setIsactive(false);
+	}
+
+	private static void ScreenShot()
+	{
+
+		// do{
+		//System.out.println("click");
+		Commands.Command(new String[]
+		{ "adb", "shell", "screencap", "-p", "/sdcard/screen.png" });
+		Commands.Command(new String[]
+		{ "adb", "pull", "/sdcard/screen.png" });
+		Commands.Command(new String[]
+		{ "adb", "shell", "rm", "/sdcard/screen.png" });
 		System.out.println("click");
-		}while(!new File("screen.png").exists());
+		// }while(!new File("screen.png").exists());
 		setCurrentScreen();
 	}
-	public static Image getCurrentScreen(){
-			return img;
+
+	public static Image getCurrentScreen()
+	{
+		return img;
 	}
-	public static String getScreenLocation(){
+
+	public static String getScreenLocation()
+	{
 		return "screen.png";
 	}
-	public static void setCurrentScreen(){
+
+	private static void setCurrentScreen()
+	{
 		try
 		{
 			img = ImageIO.read(new File("screen.png"));
@@ -69,9 +90,8 @@ public class ScreenThread extends Thread
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
+
 		}
 	}
-	
 
 }

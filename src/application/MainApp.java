@@ -76,6 +76,8 @@ public class MainApp extends Application
 
 	public void runTask(final FXMLC home)
 	{
+		Commands.Connect();
+		System.out.println("connected");
 		while (true)
 		{
 			try
@@ -106,32 +108,19 @@ public class MainApp extends Application
 	{
 		if (home.isHackActive())
 		{
-			Commands.Connect();
-			System.out.println("connected");
-			ScreenThread thread = new ScreenThread();
-			thread.start();
-			ScreenThread.ScreenShot();
-			try
-			{
-				adb.Input.GetScreen();
-			} catch (InterruptedException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 			if (home.TournamentHackBool())
 			{
+				if(!home.getHackStarted()){
+				home.ScreenThreadStop();
 				WTPassword.GuessPassword();
 				System.out.println("active");
+				home.setHackStarted(true);
+				}
 			}
 		}
 		else
 		{
-			ScreenThread.setIsactive(false);
+			//home.ScreenThreadPause();
 		}
 	}
 }

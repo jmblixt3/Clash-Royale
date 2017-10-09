@@ -12,8 +12,7 @@ public class Text
 		System.out.println("connected");
 		ScreenThread thread = new ScreenThread();
 		thread.start();
-		ScreenThread.ScreenShot();
 		adb.Input.GetScreen();
-		ScreenThread.setIsactive(false);
+		//ScreenThread.setIsactive(false);
 	}
 }
