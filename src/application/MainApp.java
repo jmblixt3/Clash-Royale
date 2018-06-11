@@ -1,3 +1,4 @@
+
 package application;
 
 import java.io.BufferedReader;
@@ -108,15 +109,7 @@ public class MainApp extends Application
 	{
 		if (home.isHackActive())
 		{
-			if (home.TournamentHackBool())
-			{
-				if(!home.getHackStarted()){
-				home.ScreenThreadStop();
-				WTPassword.GuessPassword();
-				System.out.println("active");
-				home.setHackStarted(true);
-				}
-			}
+			
 		}
 		else
 		{

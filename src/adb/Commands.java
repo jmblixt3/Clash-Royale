@@ -6,7 +6,7 @@ import java.lang.ProcessBuilder;
 public class Commands
 
 {
-	static String ip = "192.168.1.13";
+	static String ip = "127.0.0.1:21503";
 	public static Process builder = null;
 	public static void Command(String[] command)
 	{

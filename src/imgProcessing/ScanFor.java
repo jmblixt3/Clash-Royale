@@ -17,12 +17,12 @@ public class ScanFor
 		String location;
 		location = "images\\Images\\croped\\arena.png";
 		crop("images\\Images\\croped\\arena.png", 109, 131, 244, 291);
-		int[] matches = new int[11];
+		int[] matches = new int[12];
 		matches[10] = tests.SIFTTest.test("images\\Images\\ui\\arenas\\ui_icon_hogmountain.png", location);
 		matches[3] = tests.SIFTTest.test("images\\Images\\ui\\arenas\\ui_icon_barbarian.png", location);
 		matches[2] = tests.SIFTTest.test("images\\Images\\ui\\arenas\\ui_icon_bone.png", location);
 		matches[6] = tests.SIFTTest.test("images\\Images\\ui\\arenas\\ui_icon_builders.png", location);
-		matches[11] = tests.SIFTTest.test("images\\Images\\ui\\arenas\\ui_icon_champion.png", location);
+		matches[12] = tests.SIFTTest.test("images\\Images\\ui\\arenas\\ui_icon_champion.png", location);
 		matches[1] = tests.SIFTTest.test("images\\Images\\ui\\arenas\\ui_icon_goblin.png", location);
 		matches[8] = tests.SIFTTest.test("images\\Images\\ui\\arenas\\ui_icon_ice.png", location);
 		matches[9] = tests.SIFTTest.test("images\\Images\\ui\\arenas\\ui_icon_jungle.png", location);
@@ -30,6 +30,7 @@ public class ScanFor
 		matches[7] = tests.SIFTTest.test("images\\Images\\ui\\arenas\\ui_icon_royal.png", location);
 		matches[5] = tests.SIFTTest.test("images\\Images\\ui\\arenas\\ui_icon_spell.png", location);
 		matches[0] = tests.SIFTTest.test("images\\Images\\ui\\arenas\\ui_icon_training.png", location);
+		matches[11] = tests.SIFTTest.test("images\\Images\\ui\\arenas\\Electro_Valley.png", location);
 		
 		
 		int max = 0;
